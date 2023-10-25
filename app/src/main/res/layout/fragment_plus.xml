@@ -12,6 +12,7 @@
         android:layout_gravity="center_horizontal"
         android:text="이름" />
     <EditText
+        android:id="@+id/name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -23,11 +24,13 @@
         android:layout_gravity="center_horizontal"
         android:text="전화번호" />
     <EditText
+        android:id="@+id/number"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:hint="010-XXXX-XXXX"/>
     <Button
+        android:id="@+id/plusBtn"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
