@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/plusFragment"
+        android:icon="@drawable/plus_circle"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="홈"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/menuFragment"
+        android:icon="@drawable/menu"
+        app:showAsAction="always"
+        android:title="둘러보기" />
+</menu>
