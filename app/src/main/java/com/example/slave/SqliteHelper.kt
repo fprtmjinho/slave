@@ -18,7 +18,10 @@ class SqliteHelper(context: Context?, name: String?, factory: SQLiteDatabase.Cur
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-
+        if (newVersion == 1) {
+            db?.execSQL("drop table numberBook")
+            onCreate(db);
+        }
     }
 
     //insert 메소드
@@ -48,10 +51,9 @@ class SqliteHelper(context: Context?, name: String?, factory: SQLiteDatabase.Cur
 
         //반복문을 사용하여 list 에 데이터를 넘겨 줍시다.
         while(cursor.moveToNext()){
-            val id = cursor.getLong(cursor.getColumnIndex("id"))
-            val name = cursor.getString(cursor.getColumnIndex("name"))
-            val number = cursor.getString(cursor.getColumnIndex("number"))
-
+            val id = cursor.getLong(0)
+            val name = cursor.getString(1)
+            val number = cursor.getString(2)
             list.add(NumberBook(id,name,number))
         }
         cursor.close()
