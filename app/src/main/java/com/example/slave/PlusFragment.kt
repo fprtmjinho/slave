@@ -22,6 +22,8 @@ class PlusFragment : Fragment() {
     private var _binding: FragmentPlusBinding? = null
     private lateinit var mainActivity: MainActivity
     private val binding get() = _binding!!
+//    val helper = SqliteHelper(mainActivity,"numberBook",null,1)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +46,12 @@ class PlusFragment : Fragment() {
         return binding.root
     }
     private fun saveNumberBook(name: String, number: String){
-
+        binding.plusBtn.setOnClickListener {
+            val numberBook = NumberBook(null,name,number)
+            mainActivity.helper.insertNumberBook(numberBook)
+            Toast.makeText(mainActivity,"등록되었습니다.",Toast.LENGTH_SHORT).show()
+            binding.name.setText("")
+            binding.number.setText("")
+        }
     }
 }
